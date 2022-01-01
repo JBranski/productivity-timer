@@ -12,7 +12,7 @@ let timerInterval = setInterval(0),
 	paused = false;
 
 // Add event listeners for each button
-fiveMinBtn.addEventListener("click", () => {startTimer(300);});
+fiveMinBtn.addEventListener("click", () => {startTimer(1);});
 fifteenMinBtn.addEventListener("click", () => {startTimer(900);});
 twentyfiveMinBtn.addEventListener("click", () => {startTimer(1500);});
 pauseBtn.addEventListener("click", () => {pauseTimer()});
@@ -35,7 +35,7 @@ function countDown() {
 	display.textContent = `${minutes}:${seconds}`;
 
 	if (--counter < 0) {
-		counter = duration;
+		clearInterval(timerInterval);
 	}
 }
 
